@@ -13,21 +13,21 @@ export const surveys = [
     icon: "bx-book-alt",
     text: "Skripsi",
     looker:
-      "https://lookerstudio.google.com/embed/reporting/3e2916ad-91d5-44aa-83b5-957a5d70a4c0/page/G9GpF",
+    "https://lookerstudio.google.com/embed/reporting/9a980182-0401-4f10-9870-a5f5e61b4668/page/3pglF",
   },
   {
     id: 3,
     icon: "bx-group",
     text: "Bimbingan",
     looker:
-      "https://lookerstudio.google.com/embed/reporting/9a980182-0401-4f10-9870-a5f5e61b4668/page/3pglF",
+    "https://lookerstudio.google.com/embed/reporting/532fed58-4f2e-492c-a92c-72d96872840e/page/Hq3lF",
   },
   {
     id: 4,
     icon: "bx-circle-quarter",
     text: "Karir",
     looker:
-      "https://lookerstudio.google.com/embed/reporting/3e2916ad-91d5-44aa-83b5-957a5d70a4c0/page/G9GpF",
+      "https://lookerstudio.google.com/embed/reporting/4566b4a6-8f04-43ed-ad53-83d6d2a835c9/page/nn3mF",
   },
   {
     id: 5,

@@ -280,7 +280,7 @@ body.dark .switch::before {
   left: 250px;
   height: 100vh;
   width: calc(100% - 250px);
-  background: var(--body-color);
+  background: #f5f7fa;
   transition: var(--tran-05);
 }
 
