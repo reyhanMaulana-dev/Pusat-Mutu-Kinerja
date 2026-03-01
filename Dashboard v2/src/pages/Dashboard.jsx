@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../pages/Dashboard.css";
 import logo from "../assets/images/mutu-kinerja.png";
 import { useNavigate, useParams } from "react-router-dom";
 import { surveys } from "../constants/Index";
 
 export const Dashboard = () => {
+  useEffect(() => {
+    document.title = "Dashboard | Pusat Mutu Kinerja";
+  }, []);
+
   const [isClose, setIsClose] = useState(true);
 
   const toggleSidebar = () => {
@@ -16,7 +20,7 @@ export const Dashboard = () => {
   const survey = surveys[id];
 
   return (
-    <div>
+    <div className="dashboard">
       <nav className={`sidebar ${isClose ? "close" : ""}`}>
         <header>
           <div className="image-text">
@@ -24,21 +28,27 @@ export const Dashboard = () => {
               <img src={logo} alt="Logo" />
             </span>
 
-            <div className="text header-text">
+            <div className="text header-text tracking-normal">
               <span className="name">Pusat Mutu Kinerja</span>
               <span className="profession">UIN Jakarta</span>
             </div>
           </div>
 
-          <i className="bx bx-chevron-right toggle cursor-pointer" onClick={toggleSidebar}></i>
+          <i
+            className="bx bx-chevron-right toggle cursor-pointer"
+            onClick={toggleSidebar}
+          ></i>
         </header>
 
         <div className="menu-bar">
           <div className="menu border-y-2 border-[#E4E9F7]">
             <ul className="menu-links]">
               {surveys.map((item, index) => (
-                <li className={`nav-link ${ index == id ? "bg-[#F6F5FF] rounded-md" : ""} `} key={index} >
-                  <a onClick={()=> navigate(`/survei/${index}`)}>
+                <li
+                  className={`nav-link ${index == id ? "bg-[#F6F5FF] rounded-md" : ""} `}
+                  key={index}
+                >
+                  <a onClick={() => navigate(`/survei/${index}`)}>
                     <i className={`bx ${item.icon} icon`}></i>
                     <span className="text nav-text-item">{item.text}</span>
                   </a>
@@ -49,7 +59,7 @@ export const Dashboard = () => {
 
           <div className="bottom-content">
             <li>
-              <a onClick={()=> navigate("/")} className="cursor-pointer" >
+              <a onClick={() => navigate("/")} className="cursor-pointer">
                 <i className="bx bx-arrow-out-left-square-half icon"></i>
                 <span className="text nav-text">Beranda</span>
               </a>
