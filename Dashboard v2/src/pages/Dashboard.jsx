@@ -20,15 +20,15 @@ export const Dashboard = () => {
   const survey = surveys[id];
 
   return (
-    <div className="dashboard">
-      <nav className={`sidebar ${isClose ? "close" : ""}`}>
-        <header>
-          <div className="image-text">
-            <span className="image">
-              <img src={logo} alt="Logo" />
+    <div className="dashboard tracking-[.3px]">
+      <nav className={`sidebar ${isClose ? "close" : ""} shadow-xl`}>
+        <header className="relative mt-3.75">
+          <div className="image-text flex items-center tracking-normal">
+            <span className="flex items-center justify-center min-w-15">
+              <img className="w-10 rounded-md" src={logo} alt="Logo" />
             </span>
 
-            <div className="text header-text tracking-normal">
+            <div className="text header-text flex flex-col">
               <span className="name">Pusat Mutu Kinerja</span>
               <span className="profession">UIN Jakarta</span>
             </div>
@@ -42,7 +42,7 @@ export const Dashboard = () => {
 
         <div className="menu-bar">
           <div className="menu border-y-2 border-[#E4E9F7]">
-            <ul className="menu-links]">
+            <ul className="menu-links">
               {surveys.map((item, index) => (
                 <li
                   className={`nav-link ${index == id ? "bg-[#F6F5FF] rounded-md" : ""} `}
@@ -68,7 +68,9 @@ export const Dashboard = () => {
         </div>
       </nav>
 
-      <section className="home">
+      <section
+        className={`dash relative flex-1 overflow-hidden  h-screen bg-[#F5F7FA] transition-all duration-500 ease-out ${isClose ? "left-22 w-[calc(100%-88px)]" : "w-[calc(100%-250px)] left-62.5"}`}
+      >
         {survey ? (
           <iframe
             src={survey.looker}
@@ -76,6 +78,7 @@ export const Dashboard = () => {
             allowFullScreen
             sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
             title="Dashboard"
+            className="w-full h-full"
           ></iframe>
         ) : (
           <div className="flex items-center justify-center h-full font-medium">

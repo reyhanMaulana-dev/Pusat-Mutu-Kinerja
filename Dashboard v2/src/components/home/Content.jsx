@@ -16,7 +16,7 @@ export const Content = () => {
         <p className="text-base leading-lg text-gray-500 mb-14">
           Survei resmi UIN Syarif Hidayatullah Jakarta sebagai dasar evaluasi
           <br className="hidden md:block" />
-          dan peningkatan kualitas layanan akademik dan non-akademik
+          {" "}dan peningkatan kualitas layanan akademik dan non-akademik
         </p>
       </div>
       
